@@ -25,23 +25,23 @@ const Body=({state})=> {
     //console.log(parseInt(await contract1.balanceOf(window.ethereum.selectedAddress)));
     //console.log(parseInt(await contract2.balanceOf(window.ethereum.selectedAddress)));
 
-    const approved1 = await contract1.approve(await contract3.getAddress(), parseInt(amount1*(10**2)));
-    await approved1.wait();
-    console.log("approved1 done");
-    const approved2 = await contract2.approve(await contract3.getAddress(), parseInt(amount1*(10**2)));
-    await approved2.wait();
-    console.log("approved2 done");
-    const addLiquidity = await contract3.addLiquidity(amount1*(10**2),amount1*(10**2));
-    await addLiquidity.wait();
-    console.log("liquidity added");
+    // const approved1 = await contract1.approve(await contract3.getAddress(), parseInt(amount1*(10**2)));
+    // await approved1.wait();
+    // console.log("approved1 done");
+    // const approved2 = await contract2.approve(await contract3.getAddress(), parseInt(amount1*(10**2)));
+    // await approved2.wait();
+    // console.log("approved2 done");
+    // const addLiquidity = await contract3.addLiquidity(amount1*(10**2),amount1*(10**2));
+    // await addLiquidity.wait();
+    // console.log("liquidity added");
 
 
-    // const approvedAgain = await contract1.approve(await contract3.getAddress(),amount1*(10**2));
-    // await approvedAgain.wait();
-    // console.log("approved again");
+    const approvedAgain = await contract1.approve(await contract3.getAddress(),amount1*(10**2));
+    await approvedAgain.wait();
+    console.log("approved again");
 
-    // const swapping = await contract3.swap(await contract1.getAddress(),amount1*(10**2));
-    // await swapping.wait();
+    const swapping = await contract3.swap(await contract1.getAddress(),amount1*(10**2));
+    await swapping.wait();
     
     console.log("transaction done");
     // window.alert("transaction done");
